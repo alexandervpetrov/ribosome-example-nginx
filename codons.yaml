@@ -1,0 +1,49 @@
+
+project:
+  tag: ribosome-example-nginx
+
+tag_policy: ribosome.default_tag_policy
+
+meta:
+  format: python
+
+codestyle:
+  commands:
+    - make codestyle
+
+build:
+  commands:
+    - make build
+
+test:
+  commands:
+    - make test
+
+release:
+  include:
+    - meta.py
+  publish:
+    s3bucket: releases
+    # localdir: ..
+
+setup:
+  commands:
+    - make setup
+
+service:
+  load:
+    # will run with sudo
+    commands:
+      - $(pipenv --py) ./service.py install {service} {config}
+  unload:
+    # will run with sudo
+    commands:
+      - $(pipenv --py) ./service.py uninstall {service} {config}
+
+services:
+  nginxsite:
+    configs:
+      - dev
+  nginxmain:
+    configs:
+      - dev
