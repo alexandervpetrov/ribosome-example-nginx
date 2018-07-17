@@ -9,14 +9,12 @@ help:
 
 setup: ## Make runtime environment
 	@echo "Making runtime environment..."
-	@pyenv local 3.6.5
 	@pipenv sync --bare
 	@pipenv check
 
 
 devsetup:  ## Make runtime environment for development
 	@echo "Making runtime environment for development..."
-	@pyenv local 3.6.5
 	@pipenv sync --bare --dev
 	@pipenv check
 
