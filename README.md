@@ -1,3 +1,4 @@
+
 # Ribosome example: Nginx configuration files
 
 This repo is example of configured Ribosome release process for
@@ -34,7 +35,6 @@ Setup runtime and build environment:
 
     $ pyenv local 3.6.5
     $ make devsetup
-
 
 E.g. install configuration `dev` from service `nginxmain`:
 
