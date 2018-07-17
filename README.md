@@ -64,4 +64,4 @@ Run from environment where Ribosome installed:
     $ ribosome load <tag> webapp dev localhost
 
 To view working site you need to deploy and load
-[Nginx example](https://github.com/alexandervpetrov/ribosome-example-django) project.
+[Django example](https://github.com/alexandervpetrov/ribosome-example-django) project.
