@@ -314,11 +314,11 @@
         },
         "ribosome.tool": {
             "hashes": [
-                "sha256:291d4719e1e9a5b49f5e5221bce208e0bb33c0c60f9dd9356c9377d12dc6dd09",
-                "sha256:a164489922ba0a5b317134e5491ec013f7ba04ecff6987e432406d9482d29d18"
+                "sha256:326b46ea84d45a6f9cfa4ce32799fa2cb153c54f88b84e8521876f7ae329097e",
+                "sha256:5bc9cd75123b3be86bc3fcbbbaeaf7ea9d96d722a6958fdfb5f73ccd8a22edbe"
             ],
             "index": "pypi",
-            "version": "==0.3.1"
+            "version": "==0.3.2"
         },
         "ruamel.yaml": {
             "hashes": [
