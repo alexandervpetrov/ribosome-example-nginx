@@ -7,19 +7,21 @@ help:
 	@grep -E '^[a-zA-Z_.-]+:.*?## .*$$' $(MAKEFILE_LIST) | awk 'BEGIN {FS = ":.*?## "}; {printf "\033[36m%-20s\033[0m %s\n", $$1, $$2}'
 
 
-setup: ## Make runtime environment
+setup:  ## Make runtime environment
 	@echo "Making runtime environment..."
+	-@pipenv --rm
 	@pipenv sync --bare
 	-@pipenv check
 
 
 devsetup:  ## Make runtime environment for development
 	@echo "Making runtime environment for development..."
+	-@pipenv --rm
 	@pipenv sync --bare --dev
 	-@pipenv check
 
 
-clean: ## Remove bytecode, cache, build and run files
+clean:  ## Remove bytecode, cache, build and run files
 	@echo "Removing bytecode, cache, build and run files..."
 	@rm -rf `find . -name __pycache__`
 	@rm -f `find . -type f -name '*.py[co]' `
@@ -31,15 +33,15 @@ clean: ## Remove bytecode, cache, build and run files
 	@rm -rf *.log
 
 
-codestyle: ## Check code style
+codestyle:  ## Check code style
 	@echo "Checking code style..."
 	@pipenv run pycodestyle *.py --ignore=E501
 
 
-build: ## Build project
+build:  ## Build project
 	@echo "Building project..."
 	@pipenv check
 
 
-test: ## Run tests
+test:  ## Run tests
 	@echo "Running tests..."
